@@ -1,0 +1,23 @@
+[
+  {
+    "id": "com.google.android.apps.translate",
+    "name": "Переводчик",
+    "version": 1,
+    "versionName": "1.0",
+    "checksum": ""
+  },
+  {
+    "id": "com.perm.kate_new_6",
+    "name": "Kate Mobile",
+    "version": 1,
+    "versionName": "1.0",
+    "checksum": ""
+  },
+  {
+    "id": "org.telegram.messenger",
+    "name": "Telegram",
+    "version": 1,
+    "versionName": "1.0",
+    "checksum": ""
+  },
+]
