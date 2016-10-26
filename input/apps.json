@@ -1,23 +1,31 @@
 [
   {
-    "id": "com.google.android.apps.translate",
+    "packageName": "com.google.android.apps.translate",
     "name": "Переводчик",
-    "version": 1,
+    "appVersion": 1,
     "versionName": "1.0",
     "checksum": ""
   },
   {
-    "id": "com.perm.kate_new_6",
+    "packageName": "com.perm.kate_new_6",
     "name": "Kate Mobile",
-    "version": 1,
+    "appVersion": 1,
     "versionName": "1.0",
     "checksum": ""
   },
   {
-    "id": "org.telegram.messenger",
+    "packageName": "org.telegram.messenger",
     "name": "Telegram",
-    "version": 1,
+    "appVersion": 3.12.0,
     "versionName": "1.0",
     "checksum": ""
   },
+  {
+    "packageName": "org.coc.messenger",
+    "name": "ClashOfClans",
+    "appVersion": 3.12.0,
+    "versionName": "1.0",
+    "checksum": ""
+  }
 ]
+
