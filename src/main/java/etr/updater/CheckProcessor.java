@@ -17,46 +17,45 @@ class CheckProcessor extends Processor {
             printHelpSuggestion();
             return;
         }
-        {
-            comrare(args[1], args[2]);
-        }
+
+        compare(args[1], args[2]);
     }
 
     //TODO compare versions from metafile and from apks
 
-    public void comrare(String jsonFile, String directoryPath) {
+    private void compare(String jsonFile, String directoryPath) {
 
         Gson gson = new Gson();
-        List<AndroidApk> androidApkList = null;
+        List<AndroidApkFile> androidApkFileList = null;
         try {
-            androidApkList = gson.fromJson(new FileReader(jsonFile), new TypeToken<List<AndroidApk>>() {
+            androidApkFileList = gson.fromJson(new FileReader(jsonFile), new TypeToken<List<AndroidApkFile>>() {
             }.getType());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        for (AndroidApk androidApk : androidApkList) {
-            Boolean flag = new Boolean(false);
+        for (AndroidApkFile androidApkFile : androidApkFileList) {
+            boolean isApkFileFound = false;
             File[] apkList = (new File(directoryPath).listFiles());
-//            System.out.println(androidApk);
             for (File apkFile : apkList) {
-                if (apkFile.getName().contains(androidApk.getPackageName())) {
-                    flag = true;
+                if (apkFile.getName().contains(androidApkFile.getId())) {
+                    isApkFileFound = true;
                     AndroidApk apk = null;
                     try {
                         apk = new AndroidApk(apkFile);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    if (androidApk.getAppVersion().equals(apk.getAppVersion())) {
+                    if (androidApkFile.getVersion() == (Integer.parseInt(apk.getAppVersionCode()))) {
                         System.out.println("version apk " + apk.getPackageName() + " ident version in metafiles " + jsonFile);
                     } else
                         System.out.println("version apk " + apk.getPackageName() + " not ident version in metafiles " + jsonFile);
                 }
             }
-            if (flag == false) {
-                System.out.println(androidApk.getPackageName() + " is not found!");
+            if (!isApkFileFound) {
+                System.out.println(androidApkFile.getId() + " is not found!");
             }
         }
+
     }
 }
 
