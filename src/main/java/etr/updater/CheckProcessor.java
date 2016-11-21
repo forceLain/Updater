@@ -20,9 +20,7 @@ class CheckProcessor extends Processor {
 
         compare(args[1], args[2]);
     }
-
-    //TODO compare versions from metafile and from apks
-
+    
     private void compare(String jsonFile, String directoryPath) {
 
         Gson gson = new Gson();
