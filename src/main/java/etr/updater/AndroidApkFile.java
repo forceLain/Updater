@@ -6,7 +6,7 @@ public class AndroidApkFile {
     private String name;
     private int version;
     private String versionName;
-    private String cheksum;
+    private String checkSum;
 
     public String getId() {
         return id;
@@ -40,11 +40,11 @@ public class AndroidApkFile {
         this.versionName = versionName;
     }
 
-    public String getCheksum() {
-        return cheksum;
+    public String getCheckSum() {
+        return checkSum;
     }
 
-    public void setCheksum(String cheksum) {
-        this.cheksum = cheksum;
+    public void setCheckSum(String checkSum) {
+        this.checkSum = checkSum;
     }
 }
